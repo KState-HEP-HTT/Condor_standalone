@@ -48,7 +48,7 @@ or run the code to submit all of them at once:
 ```source submit_TT.sh```
 
 
-### One button run scripts:
+## One button run scripts:
 From Condor_standalone
 1. Clean the area.
 
@@ -95,7 +95,7 @@ Codes in this repository is set up for mt channel skiming.
 If you want to skim tt channel Ntuples, the following three lines in prepareScripts.py need to be modified. Replace mt to tt.
 
    ```
-   cp /hdfs/store/user/doyeong/SMHTT_CONDOR/tautau/myskims/skim_mt.exe .		
+   cp /hdfs/store/user/doyeong/SMHTT_CONDOR/mutau/myskims/skim_mt.exe .		
    chmod u+x skim_mt.exe  
    file.write("./skim_mt.exe mc " +  name + "_" + str(counter) + ".root " + item[:-1] + " 0\n")
    ```
