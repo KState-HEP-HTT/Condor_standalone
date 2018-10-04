@@ -23,7 +23,7 @@ eval `scramv1 project CMSSW CMSSW_8_0_26_patch1`
 cd CMSSW_8_0_26_patch1/src/
 eval `scram runtime -sh`
 
-cp /hdfs/store/user/ymaravin/test/skim_mt.exe .
+cp /hdfs/store/user/doyeong/SMHTT_CONDOR/mutau/myskims/skim_mt.exe .
 cp /hdfs/store/user/ymaravin/test/TypeI-PFMet_Run2016BtoH.root .
 chmod u+x skim_mt.exe
 """
@@ -36,7 +36,7 @@ for item in filesToProcess:
     # write  the header
     file.write(scriptHeader)
     # execute script with a given input variables
-    file.write("./skim_mt.exe mc " +  name + "_" + str(counter) + ".root " + item[:-1] + " 0\n")
+    file.write("./skim_mt.exe mc " +  name + "_" + str(counter) + ".root " + item[:-1] + " Z\n")
     # copy the output to hdfs
     file.write("gfal-copy " + name + "_" + str(counter) + ".root gsiftp://cms-lvs-gridftp.hep.wisc.edu:2811/" + outputDir + "\n")
     file.close()
