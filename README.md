@@ -50,52 +50,11 @@ or run the code to submit all of them at once:
 
 ## One button run scripts:
 From Condor_standalone
-1. Clean the area.
-
-   ```source newSetup.sh```
-
-2. Copy run scripts.
-
-   tt channel :    ```cp scripts_FSA_v1/* .```
-
-   mt channel :    ```cp scripts_FSA_v2/* .```
-
-3. In each script, change the output directory(must be in /hdfs). Make sure which version of FSA is used.
-
-   Then, ```mkdir the output directory```
-
-   For example, open recoil0_data.sh and change bold part which is the output directory.
-
-   python prepareScripts.py data_B_1 /hdfs/store/user/ndev/LFV_reminiaod_feb18/data_SingleMuon_Run2016B_v1 **/hdfs/store/user/doyeong/SMHTT_CONDOR/mutau/myskims/Aug30/ES0_W0**   
-   
-   ```mkdir /hdfs/store/user/doyeong/SMHTT_CONDOR/mutau/myskims/Aug30/ES0_W0```
-
-4. In prepareScripts.py, choose proper 1) recoil option(0, Z, or W) and 2) mc or data.
-
-   For instance, open prepareScripts.py and modify two bold part in the below line.
-
-   file.write("./skim_mt.exe **mc** " +  name + "_" + str(counter) + ".root " + item[:-1] + " **Z**\n")
-
-   Each run script name has which option need to be chosen.
-
-   For recoil0_data.sh, 
-   ```file.write("./skim_mt.exe data " +  name + "_" + str(counter) + ".root " + item[:-1] + " 0\n")```   
-
-   For recoilZ_mc.sh,
-   ```file.write("./skim_mt.exe mc " +  name + "_" + str(counter) + ".root " + item[:-1] + " Z\n")```
-
-5. To submit jobs,
-   
-   ```source recoil0_data.sh```
-
-
-#### To change channel
-Codes in this repository is set up for mt channel skiming.
-
-If you want to skim tt channel Ntuples, the following three lines in prepareScripts.py need to be modified. Replace mt to tt.
 
    ```
-   cp /hdfs/store/user/doyeong/SMHTT_CONDOR/mutau/myskims/skim_mt.exe .		
-   chmod u+x skim_mt.exe  
-   file.write("./skim_mt.exe mc " +  name + "_" + str(counter) + ".root " + item[:-1] + " 0\n")
+   source quickSubmit.sh <1 for tt, 2 for mt> <output location in hdfs area>
+   source quickSubmit.sh 2 /hdfs/store/user/doyeong/SMHTT_CONDOR/mutau/myskims/Aug30/
+
    ```
+
+Will update for tt. 
