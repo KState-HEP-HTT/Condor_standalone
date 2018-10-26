@@ -29,7 +29,7 @@ echo 'copied?'
 echo `pwd`
 echo `ls`
 echo `cmsenv`
-cp /hdfs/store/user/ymaravin/test/TypeI-PFMet_Run2016BtoH.root .
+cp /hdfs/store/user/doyeong/RootFiles/TypeI-PFMet_Run2016BtoH.root .
 chmod u+x skim_mt.exe
 """
 
