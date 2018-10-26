@@ -6,6 +6,7 @@ cat > condor_${1}_${2} <<EOF
 universe = vanilla
 executable = Scripts/${1}_${2}.sh
 should_transfer_files = yes
+GetEnv = True
 WhenToTransferOutput = on_exit
 Requirements = TARGET.Arch == "x86_64" && HasAFS_OSG && TARGET.UWCMS_CVMFS_Exists && TARGET.CMS_CVMFS_Exists && HAS_CMS_HDFS
 Arguments = ${2}
