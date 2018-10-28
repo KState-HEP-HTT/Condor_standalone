@@ -13,7 +13,7 @@ python prepareScripts.py ZZ4l /hdfs/store/user/ndev/LFV_feb18_mc/ZZTo4L_13TeV-am
 
 python prepareScripts.py EWKWMinus_1 /hdfs/store/user/ndev/LFV_feb18_mc/EWKWMinus2Jets_WToLNu_M-50_13TeV-madgraph-pythia8_v6-v1 ${1} mc 0
 python prepareScripts.py EWKWMinus_2 /hdfs/store/user/ndev/LFV_feb18_mc/EWKWMinus2Jets_WToLNu_M-50_13TeV-madgraph-pythia8_v6_ext1-v1 ${1} mc 0
-python prepareScripts.py EWKWMinus_3 /hdfs/store/user/ndev/LFV_feb18_mc/EWKWMinus2Jets_WToLNu_M-50_13TeV-madgraph-pythia8_v6_ext2-v1 /hdfs/store/user/doyeong/mutauSkims_ol
+python prepareScripts.py EWKWMinus_3 /hdfs/store/user/ndev/LFV_feb18_mc/EWKWMinus2Jets_WToLNu_M-50_13TeV-madgraph-pythia8_v6_ext2-v1 ${1} mc 0
 python prepareScripts.py EWKWPlus_1 /hdfs/store/user/ndev/LFV_feb18_mc/EWKWPlus2Jets_WToLNu_M-50_13TeV-madgraph-pythia8_v6-v1 ${1} mc 0
 python prepareScripts.py EWKWPlus_2 /hdfs/store/user/ndev/LFV_feb18_mc/EWKWPlus2Jets_WToLNu_M-50_13TeV-madgraph-pythia8_v6_ext1-v1 ${1} mc 0
 python prepareScripts.py EWKWPlus_3 /hdfs/store/user/ndev/LFV_feb18_mc/EWKWPlus2Jets_WToLNu_M-50_13TeV-madgraph-pythia8_v6_ext2-v1 ${1} mc 0
