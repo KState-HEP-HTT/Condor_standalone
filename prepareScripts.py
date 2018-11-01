@@ -24,13 +24,13 @@ export HOME=/afs/hep.wisc.edu/home/doyeong
 eval `scramv1 project CMSSW CMSSW_8_0_26_patch1`
 cd CMSSW_8_0_26_patch1/src/
 eval `scram runtime -sh`
-cp /hdfs/store/user/doyeong/SMHTT_CONDOR/mutau/myskims/skim_mt.exe .
+cp /hdfs/store/user/doyeong/SMHTT_CONDOR/tautau/myskims/skim_tt.exe .
 echo 'copied?'
 echo `pwd`
 echo `ls`
 echo `cmsenv`
 cp /hdfs/store/user/doyeong/RootFiles/TypeI-PFMet_Run2016BtoH.root .
-chmod u+x skim_mt.exe
+chmod u+x skim_tt.exe
 """
 
 # Counter for files
@@ -41,7 +41,7 @@ for item in filesToProcess:
     # write  the header
     file.write(scriptHeader)
     # execute script with a given input variables
-    file.write("./skim_mt.exe " + MCorData+" " + name + "_" + str(counter) + ".root " + item[:-1] + " " + recoil + "\n")
+    file.write("./skim_tt.exe " + MCorData+" " + name + "_" + str(counter) + ".root " + item[:-1] + " " + recoil + "\n")
     # copy the output to hdfs
     file.write("gfal-copy " + name + "_" + str(counter) + ".root gsiftp://cms-lvs-gridftp.hep.wisc.edu:2811/" + outputDir + "\n")
     file.close()
