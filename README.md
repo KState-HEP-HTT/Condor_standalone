@@ -24,17 +24,16 @@ Here are the instructions for my skimmer, but it is fairly general.
    Find your proxy  (you are owner and it  is most likely the bottom-most file in the list, i.e., most recently created).
 modify the ```submitProduction.sh``` with your own proxy file name
 
-4. How to run the code, say you want to process TT files:
+4. How to run the code, say you want to process VBF125 files:
 
-   ```python prepareScripts.py TT /hdfs/store/user/ndev/LFV_feb18_mc/TT_TuneCUETP8M2T4_13TeV-powheg-pythia8_v6-v1 /hdfs/store/user/ymaravin/test```
+   ```python prepareScripts.py VBFHtoTauTau125 /hdfs/store/user/truggles/SMHTT_signals_may30/VBFHToTauTau_M125_13TeV_powheg_pythia8_v6-v1 /hdfs/store/user/yourusername mc Z```
 
+   I run prepareScripts.py with the name "VBFHtoTauTau125" (call  it anyway you want),
+input directory with VBFHtoTauTau12_Tune etc. then output area (must be in hdfs)
 
-   I run prepareScripts.py with the name "TT" (call  it anyway you want),
-input directory with TT_Tune etc. then output area (must be in hdfs)
+   This would create a lot of files in Scripts/  area, all named VBFHtoTauTau12_*.sh.
 
-   This would create a lot of files in Scripts/  area, all named TT_*.sh (986 total).
-
-   Each file is dedicated to process only  one file (takes  about 10  sec each).
+   Each file is dedicated to process only one file (takes  about 10  sec each).
 
 
 
@@ -42,10 +41,10 @@ input directory with TT_Tune etc. then output area (must be in hdfs)
 You have to have a valid  proxy: ```voms-proxy-init --voms=cms --valid=48:00```
 
 You can submit it  manually one by  one:
-```source submitProduction.sh TT 0```
+```source submitProduction.csh VBFHtoTauTau125 0```
 
 or run the code to submit all of them at once:
-```source submit_TT.sh```
+```source submit_VBFHtoTauTau12.sh```
 
 
 ## One button run scripts:
